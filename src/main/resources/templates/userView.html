@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<header th:insert="~{fragments/headers/user-header::user-header}"></header>
+<main>
+    <h1>Tus cursos disponibles</h1>
+    <ul th:each="curso: ${courses}">
+        <li>
+            <p th:text="${curso.name}"></p>
+            <p th:text="${curso.description}"></p>
+        </li>
+    </ul>
+</main>
+<footer th:insert="~{fragments/footer::footer}"></footer>
+</body>
+</html>
