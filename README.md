@@ -41,15 +41,10 @@ Este proyecto es una aplicación web destinada a optimizar y centralizar el proc
 
 3. Configura la base de datos MySQL y actualiza `application.properties` con tus credenciales:
     ```properties
-    spring.datasource.url=jdbc:mysql://localhost:3306/tu_base_de_datos
-    spring.datasource.username=tu_usuario
-    spring.datasource.password=tu_contraseña
+    spring.datasource.url=jdbc:mysql://localhost:3306/church_database
+    spring.datasource.username=root
+    spring.datasource.password=admin
     spring.jpa.hibernate.ddl-auto=update
-    ```
-
-4. Construye y ejecuta la aplicación:
-    ```bash
-    ./mvnw spring-boot:run
     ```
 
 ## Configuración Inicial
@@ -92,5 +87,5 @@ Este proyecto es una aplicación web destinada a optimizar y centralizar el proc
 
 ## Contacto
 
-Para cualquier pregunta o sugerencia, por favor contacta a [tu_nombre] en [tu_email@dominio.com].
+Para cualquier pregunta o sugerencia, por favor contacta a Daniel Carrillo en daniel.carrillo01@uptc.edu.
 
