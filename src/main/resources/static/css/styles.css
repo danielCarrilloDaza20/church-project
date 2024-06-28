@@ -1,5 +1,9 @@
 body {
     background-color: #007bff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .container {
@@ -11,4 +15,12 @@ body {
 
 .alert {
     display: none;
+}
+
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    margin-top: auto;
 }
