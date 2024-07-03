@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/proceso")
 public class ProcesoController {
 
-    @GetMapping({"","/"})
+    /*@GetMapping({"","/"})
     public String proceso(){
         return "/proceso/proceso";
     }
@@ -16,10 +16,6 @@ public class ProcesoController {
     @GetMapping("/registro")
     public String registro(){
         return "/proceso/registro";
-    }
+    }*/
 
-    @GetMapping("/login")
-    public String login() {
-        return "/proceso/login";
-    }
 }
