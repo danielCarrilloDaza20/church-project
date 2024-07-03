@@ -8,7 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     @GetMapping({"/home", "", "/"})
-    public String registry(){
+    public String home(){
         return "home";
+    }
+
+    // request mapping para /teachers
+    @GetMapping({"/teachers"})
+    public String showTeachers(){
+        return "teachers";
+    }
+
+    // request mapping para /students
+    @GetMapping({"/students"})
+    public String showStudents(){
+        return "students";
     }
 }
