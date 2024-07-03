@@ -65,8 +65,15 @@
             <input type="submit" class="btn btn-primary btn-block" value="Ingresar">
             <a href="#" class="d-block text-center mt-3" data-toggle="modal" data-target="#forgotPasswordModal">¿Olvidó su contraseña?</a>
 
+            <div>
+                <a th:href="@{/register/showRegisterForm}"
+                   class="btn btn-primary mt-3"
+                   role="button"
+                   aria-pressed="true">Registrar Nuevo Usuario</a>
+            </div>
         </form>
     </div>
+
 </div>
 <footer th:insert="~{fragments/footer::footer}"></footer>
 
