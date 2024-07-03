@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión</title>
+    <title>Login</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #007bff;
         }
+
         .login-container {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
+
         .login-card {
             background-color: #ffffff;
             padding: 30px;
@@ -24,46 +26,56 @@
             max-width: 400px;
             width: 100%;
         }
+
         .login-card img {
             display: block;
             margin: 0 auto 20px;
             width: 100px;
         }
-        .alert {
-            display: none;
-        }
     </style>
 </head>
 <body>
-<header th:insert="~{fragments/headers/proceso-header::proceso-header}"></header>
 <div class="login-container">
     <div class="login-card">
-        <h2 class="text-center mb-4">
-            <img th:src="@{logo.jpeg}" alt="Iniciar Sesión" style="width: 50px; height: 50px; margin-bottom: 10px;">
-        </h2>
+        <!--<h2 class="text-center mb-4">
+            <img th:src="@{/images/logo.jpeg}" alt="Iniciar Sesión">
+        </h2>-->
+        <img th:src="@{images/logo.jpeg}" alt="Logo">
 
         <h2 class="text-center mb-4">Iniciar sesión</h2>
-        <div class="alert alert-danger" role="alert" id="alerta">
+        <!--<div class="alert alert-danger" role="alert" id="alerta">
             Su sesión ha excedido el tiempo límite. Por favor, acceda de nuevo.
-        </div>
-        <form id="formLogin">
-            <div class="form-group">
-                <label for="username">Nombre de usuario</label>
-                <input type="text" class="form-control" id="username" required>
+        </div>-->
+        <form id="formLogin" action="#" th:action="@{/authUser}" method="post">
+            <div class="alert alert-danger" role="alert" th:if="${param.error}">
+                Ingresó un usuario/contraseña inválido
+            </div>
+            <div class="alert alert-success" role="alert" th:if="${param.logout}">
+                Ha cerrado sesión correctamente.
             </div>
             <div class="form-group">
-                <label for="password">Contraseña</label>
-                <input type="password" class="form-control" id="password" required>
+                <!--<label for="username">Nombre de usuario</label>-->
+                <input type="text" name="username" class="form-control" id="username" placeholder="Usuario" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Acceder</button>
+            <div class="form-group">
+                <!--<label for="password">Contraseña</label>-->
+                <input type="password" name="password" class="form-control" id="password" placeholder="Contraseña"
+                       required>
+            </div>
+            <!--<button type="submit" class="btn btn-primary btn-block">Ingresar</button>-->
+            <input type="submit" class="btn btn-primary btn-block" value="Ingresar">
             <a href="#" class="d-block text-center mt-3" data-toggle="modal" data-target="#forgotPasswordModal">¿Olvidó su contraseña?</a>
-            <hr>
 
         </form>
     </div>
 </div>
+<footer th:insert="~{fragments/footer::footer}"></footer>
 
-<!-- Modal de Olvidó su Contraseña -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Modal de Olvidó su Contraseña
 <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -89,33 +101,6 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    document.getElementById('formLogin').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const usuario = document.getElementById('username').value;
-        const password = document.getElementById('contrasena').value;
-
-        if (usuario && contrasena) {
-            // Lógica de autenticación
-            alert('Inicio de sesión exitoso');
-        } else {
-            document.getElementById('alerta').style.display = 'block';
-        }
-    });
-
-    document.getElementById('forgotPasswordForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const correoRecuperacion = document.getElementById('correoRecuperacion').value;
-
-        if (correoRecuperacion) {
-            // Aquí agregarías la lógica para enviar un correo de recuperación
-            alert('Correo de recuperación enviado a ' + correoRecuperacion);
-            $('#forgotPasswordModal').modal('hide');
-        } else {
-            alert('Por favor, ingrese un correo electrónico válido.');
-        }
-    });
-</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
 </body>
 </html>
