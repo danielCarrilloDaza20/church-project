@@ -62,32 +62,4 @@ public class SecurityConfig {
         return http.build();
     }
 
-
-
-
-
-    /*
-    @Bean
-    public InMemoryUserDetailsManager userDetailsManager() {
-        UserDetails daniel = User.builder()
-                .username("daniel")
-                .password("{noop}daniel123")
-                .roles("USER")
-                .build();
-
-        UserDetails felipe = User.builder()
-                .username("felipe")
-                .password("{noop}felipe123")
-                .roles("USER", "TEACHER")
-                .build();
-
-        UserDetails daniela = User.builder()
-                .username("daniela")
-                .password("{noop}daniela123")
-                .roles("USER", "TEACHER", "ADMINISTRATOR")
-                .build();
-        return new InMemoryUserDetailsManager(daniel, felipe, daniela);
-    }
-
-     */
 }
