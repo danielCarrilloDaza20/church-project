@@ -40,7 +40,8 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(configurer ->
                         configurer
-                                .requestMatchers("/").hasRole("USER")
+                                .requestMatchers("/landing").permitAll()
+                                .requestMatchers(("/")).hasRole("USER")
                                 .requestMatchers("/students/**").hasRole("TEACHER")
                                 .requestMatchers("/teachers/**", "/students/**").hasRole("ADMINISTRATOR")
                                 .requestMatchers("/register/**").permitAll()
@@ -53,7 +54,9 @@ public class SecurityConfig {
                                 .defaultSuccessUrl("/", true)
                                 .permitAll()
                 )
-                .logout(logout -> logout.permitAll()
+                .logout(logout ->
+                        logout.permitAll()
+                        .logoutSuccessUrl("/landing")
 
                 )
                 .exceptionHandling(configurer ->

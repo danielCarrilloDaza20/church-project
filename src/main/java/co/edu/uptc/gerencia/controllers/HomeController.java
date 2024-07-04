@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 
+    @GetMapping("/landing")
+    public String showLandingPage() {
+        return "landing-page";
+    }
+
     @GetMapping({"/home", "", "/"})
     public String home(){
         return "home";
