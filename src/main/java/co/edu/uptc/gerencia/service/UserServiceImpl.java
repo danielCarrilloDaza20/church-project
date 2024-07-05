@@ -36,6 +36,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User findByDocumentNumber(String documentNumber) {
+        return userDao.findByDocumentNumber(documentNumber);
+    }
+
+    @Override
     public void save(WebUser webUser){
         User user = new User();
 
@@ -45,6 +50,11 @@ public class UserServiceImpl implements UserService {
         user.setLastName(webUser.getLastName());
         user.setCellphone(webUser.getCellPhone());
         user.setEmail(webUser.getEmail());
+        user.setBirthDate(webUser.getBirthDate());
+        user.setGender(webUser.getGender());
+        user.setDocumentType(webUser.getDocumentType());
+        user.setDocumentNumber(webUser.getDocumentNumber());
+        user.setRegistryDate(webUser.getRegistryDate());
         user.setEnabled(true);
 
         // da al usuario el rol de "usuario" por defecto

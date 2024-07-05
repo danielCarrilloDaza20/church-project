@@ -1,9 +1,15 @@
 package co.edu.uptc.gerencia.user;
 
+import co.edu.uptc.gerencia.entity.User;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 public class WebUser {
@@ -32,4 +38,25 @@ public class WebUser {
     @Size(min = 1, message = "is required")
     @Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
     private String email;
+
+    @NotNull(message = "Campo requerido")
+    @PastOrPresent(message = "La fecha de nacimiento debe ser en el pasado o presente")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date birthDate;
+
+    @NotNull(message = "Campo requerido")
+    @Size(min = 1, message = "Campo requerido")
+    private String gender;
+
+    @NotNull(message = "Campo requerido")
+    @Size(min = 1, message = "Campo requerido")
+    private String documentType;
+
+    @NotNull(message = "Campo requerido")
+    @Size(min = 1, message = "Campo requerido")
+    private String documentNumber;
+
+    @NotNull(message = "Campo requerido")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date registryDate = new Date();
 }

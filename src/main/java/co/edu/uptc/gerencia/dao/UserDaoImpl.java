@@ -32,6 +32,22 @@ public class UserDaoImpl implements UserDao{
     }
 
     @Override
+    public User findByDocumentNumber(String documentNumber) {
+        TypedQuery<User> query = entityManager.createQuery("from User where documentNumber=:documentNumber", User.class);
+        query.setParameter("documentNumber", documentNumber);
+
+        User user = null;
+
+        try {
+            user = query.getSingleResult();
+        }catch (Exception e) {
+            user = null;
+        }
+
+        return user;
+    }
+
+    @Override
     @Transactional
     public void save(User user) {
         entityManager.merge(user);

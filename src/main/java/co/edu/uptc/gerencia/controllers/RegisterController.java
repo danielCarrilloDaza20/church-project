@@ -46,6 +46,7 @@ public class RegisterController {
             BindingResult bindingResult,
             HttpSession session, Model model){
         String userName = webUser.getUserName();
+        String documentNumber = webUser.getDocumentNumber();
         logger.info("Procesando formulario de registro para: " + userName);
 
         // Validacion de formulario
@@ -55,11 +56,14 @@ public class RegisterController {
 
         // Revisa en la base de datos si el usuario existe
         User existing = userService.findByUserName(userName);
-        if(existing != null){
+        User existingDocumentNumber = userService.findByDocumentNumber(documentNumber);
+        if(existing != null || existingDocumentNumber != null){
             model.addAttribute("webUser", new WebUser());
-            model.addAttribute("registrationError", "Ya existe un usuario con ese nombre");
+            model.addAttribute("registrationUsernameError", "Ya existe un usuario con ese nombre");
+            model.addAttribute("registrationDocNumberError", "Ya existe un usuario con ese numero de documento");
 
             logger.warning("Ya existe un usuario con ese nombre");
+            logger.warning("Ya existe un usuario con ese numero de documento");
             return "register/registration-form";
         }
 

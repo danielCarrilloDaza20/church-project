@@ -1,8 +1,11 @@
 package co.edu.uptc.gerencia.entity;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.Collection;
+import java.util.Date;
 
 @Entity
 @Table(name = "user")
@@ -33,6 +36,24 @@ public class User {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "birth_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date birthDate;
+
+    @Column(name = "gender")
+    private String gender;
+
+    @Column(name = "document_type")
+    private String documentType;
+
+    @Column(name = "document_number")
+    private String documentNumber;
+
+    @Column(name = "registry_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date registryDate;
+
+
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -53,6 +74,37 @@ public class User {
         this.userName = userName;
         this.password = password;
         this.enabled = enabled;
+        this.roles = roles;
+    }
+
+    public User(String userName, String password, boolean enabled, String firstName, String lastName, String cellphone, String email, Date birthDate, String gender, String documentType, String documentNumber, Date registryDate) {
+        this.userName = userName;
+        this.password = password;
+        this.enabled = enabled;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.cellphone = cellphone;
+        this.email = email;
+        this.birthDate = birthDate;
+        this.gender = gender;
+        this.documentType = documentType;
+        this.documentNumber = documentNumber;
+        this.registryDate = registryDate;
+    }
+
+    public User(String userName, String password, boolean enabled, String firstName, String lastName, String cellphone, String email, Date birthDate, String gender, String documentType, String documentNumber, Date registryDate, Collection<Role> roles) {
+        this.userName = userName;
+        this.password = password;
+        this.enabled = enabled;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.cellphone = cellphone;
+        this.email = email;
+        this.birthDate = birthDate;
+        this.gender = gender;
+        this.documentType = documentType;
+        this.documentNumber = documentNumber;
+        this.registryDate = registryDate;
         this.roles = roles;
     }
 
@@ -120,6 +172,46 @@ public class User {
         this.email = email;
     }
 
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getDocumentType() {
+        return documentType;
+    }
+
+    public void setDocumentType(String documentType) {
+        this.documentType = documentType;
+    }
+
+    public String getDocumentNumber() {
+        return documentNumber;
+    }
+
+    public void setDocumentNumber(String documentNumber) {
+        this.documentNumber = documentNumber;
+    }
+
+    public Date getRegistryDate() {
+        return registryDate;
+    }
+
+    public void setRegistryDate(Date registryDate) {
+        this.registryDate = registryDate;
+    }
+
     public Collection<Role> getRoles() {
         return roles;
     }
@@ -139,7 +231,13 @@ public class User {
                 ", lastName='" + lastName + '\'' +
                 ", cellphone='" + cellphone + '\'' +
                 ", email='" + email + '\'' +
+                ", birthDate=" + birthDate +
+                ", gender=" + gender +
+                ", documentType=" + documentType +
+                ", documentNumber='" + documentNumber + '\'' +
+                ", registryDate=" + registryDate +
                 ", roles=" + roles +
                 '}';
     }
+
 }
