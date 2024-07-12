@@ -1,45 +1,109 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Hello Test</title>
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="test/hello">Inicio</a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-      <a class="nav-link" href="/login">Inicio de Sesión</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/registro">Inscripción</a>
-                </li>
-            </ul>
-			<ul class="navbar-nav ml-auto">
-			                <li class="nav-item">
-			                    <a class="nav-link" href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
-			                </li>
-			            </ul>
-
-                   
-
-        </div>
-    </nav>
 <body>
-<h1>Landing Page</h1>
-<p>Landing Page, público para todo usuario</p>
-<p>
-<a th:href="@{/login}">Acceder a tu cuenta</a>
-</p>
+<header th:insert="~{fragments/headers/proceso-header::proceso-header}"></header>
 
-</body>
+<section id="hero" class="text-black text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="display-4">Bienvenido a Nuestra Plataforma</h1>
+                <p class="lead mb-4">Aprende y crece con nosotros</p>
+                <a href="#features" class="btn btn-primary btn-lg">Descubre más</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="py-5" th:style="'background : url(' + @{/images/juventud_a_tope.jpg} + '); backdrop-filter: blur(6px); background-size: cover;'">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="text-center">
+                    <i class="fas fa-3x fa-cross mb-2"></i>
+                    <h4 class="h6">Oración y Meditación</h4>
+                    <p class="text-muted">Descubre la meditación y la paz.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="text-center">
+                    <i class="fas fa-3x fa-book-bible mb-2"></i>
+                    <h4 class="h6">Estudio Bíblico</h4>
+                    <p class="text-muted">Explora nuestras enseñanzas y lecciones.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="text-center">
+                    <i class="fas fa-3x fa-hands mb-2"></i>
+                    <h4 class="h6">Servicio Comunitario</h4>
+                    <p class="text-muted">Aprende sobre la importancia de servir a los demás en la comunidad.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="display-4 mb-4">Testimonios de nuestros estudiantes</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="card-text">"Excelente plataforma, aprendí mucho en poco tiempo."</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">- María Pérez</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="card-text">"Muy recomendado para quienes desean aprender."</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">- Juan Gómez</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="card-text">"La mejor decisión que tomé fue inscribirme en este curso."</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">- Andrés López</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="cta" class="text-center py-5" th:style="'background : url(' + @{/images/juventud_a_tope.jpg} + '); backdrop-filter: blur(6px); background-size: cover;'">
+    <div class="container">
+        <h2 class="display-4">¿Listo para comenzar tu viaje de aprendizaje?</h2>
+        <p class="lead mb-4">Únete a nosotros y empieza a aprender hoy mismo.</p>
+        <a th:href="@{/register}" class="btn btn-primary btn-lg">Regístrate ahora</a>
+    </div>
+</section>
+
+<footer id="footer" th:insert="~{fragments/footer::footer}"></footer>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
