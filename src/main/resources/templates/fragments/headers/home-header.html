@@ -16,7 +16,17 @@
                     <a class="nav-link" th:href="@{/proceso}">Proceso de Formación</a>
                 </li>
             </ul>
+
+        <form th:action="@{/logout}" method="post">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <!--<a class="nav-link" th:href="@{/proceso/registro}">Cerrar Sesión</a>-->
+                    <input class="nav-link" type="submit" value="Cerrar Sesión" />
+                </li>
+            </ul>
+        </form>
         </div>
     </nav>
 </header>
+
 </html>
