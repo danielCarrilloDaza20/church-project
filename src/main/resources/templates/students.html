@@ -1,14 +1,118 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Students</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Gastos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #343a40;
+        }
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #ffffff;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+    </style>
 </head>
 <body>
-<h2>Estudiantes</h2>
-<hr>
 
-<hr>
-<a th:href="@{/}">Inicio</a>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">Gestión de Gastos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Perfil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Materiales de Estudio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Notificaciones</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Datos Personales -->
+            <div class="card">
+                <div class="card-header">
+                    Datos Personales
+                </div>
+                <div class="card-body">
+                    <p><strong>Nombre:</strong> Juan Pérez</p>
+                    <p><strong>Email:</strong> juan.perez@example.com</p>
+                    <p><strong>Teléfono:</strong> 3137863432</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!-- Materiales de Estudio -->
+            <div class="card">
+                <div class="card-header">
+                    Materiales de Estudio
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="#">Lección 1 - Introducción</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">Taller 1 - Conceptos Básicos</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">Lección 2 - Avanzado</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!-- Información del Proceso de Formación -->
+            <div class="card">
+                <div class="card-header">
+                    Proceso de Formación
+                </div>
+                <div class="card-body">
+                    <p><strong>Asistencias a Clases:</strong> 90%</p>
+                    <p><strong>Mensajes:</strong> 5 Nuevos Mensajes</p>
+                    <p><strong>Notificaciones:</strong> 2 Notificaciones Nuevas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer mt-auto py-3 bg-dark">
+    <div class="container text-center">
+        <span class="text-muted">&copy; 2024 Gestión de Gastos. Todos los derechos reservados.</span>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema Educativo - Maestro</title>
+  <title>Control de Asistencias - Maestro</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
@@ -44,15 +44,16 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="teachers.html">Inicio</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="asistencias.html">Asistencias</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="contenidos.html">Contenidos</a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link" href="#">Notificaciones</a>
       </li>
@@ -64,14 +65,56 @@
 </nav>
 
 <div class="container">
-  <div id="inicio" class="section">
-    <h2>Inicio</h2>
-    <p>Bienvenido al sistema educativo para maestros.</p>
+  <div id="asistencias" class="section">
+    <h2>Control de Asistencias</h2>
+    <p>Marcar la asistencia de los estudiantes a las clases.</p>
+    <form id="attendanceForm">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Estudiante</th>
+            <th>Asistencia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>
+              <input type="checkbox" name="attendance[]" value="Juan Pérez">
+            </td>
+          </tr>
+          <tr>
+            <td>María García</td>
+            <td>
+              <input type="checkbox" name="attendance[]" value="María García">
+            </td>
+          </tr>
+          <tr>
+            <td>Carlos López</td>
+            <td>
+              <input type="checkbox" name="attendance[]" value="Carlos López">
+            </td>
+          </tr>
+          <!-- Más filas -->
+        </tbody>
+      </table>
+      <button type="submit" class="btn btn-primary">Guardar Asistencias</button>
+    </form>
   </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#attendanceForm').on('submit', function(e) {
+      e.preventDefault();
+      let formData = $(this).serializeArray();
+      console.log(formData);
+      alert('Asistencias guardadas exitosamente.');
+    });
+  });
+</script>
 </body>
 </html>
