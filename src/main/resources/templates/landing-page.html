@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <title>Hello Test</title>
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-	   
+
 </head>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.html">Inicio</a>
+
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="test/hello">Inicio</a>
@@ -18,10 +20,14 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
+
       <a class="nav-link" href="login.html">Inicio de Sesión</a>
+
+      <a class="nav-link" href="/login">Inicio de Sesión</a>
+
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="registro.html">Inscripción</a>
+                    <a class="nav-link" href="/registro">Inscripción</a>
                 </li>
             </ul>
 			<ul class="navbar-nav ml-auto">
@@ -35,8 +41,11 @@
         </div>
     </nav>
 <body>
-<h1>Hello Test</h1>
-<p th:text="${message}"></p>
+<h1>Landing Page</h1>
+<p>Landing Page, público para todo usuario</p>
+<p>
+<a th:href="@{/login}">Acceder a tu cuenta</a>
+</p>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

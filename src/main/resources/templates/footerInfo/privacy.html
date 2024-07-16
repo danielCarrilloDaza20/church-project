@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<header th:insert="~{fragments/headers/user-header::user-header}"></header>
+<main class="container mt-5">
+    <section class="text-center mb-5">
+        <h1>Políticas de Privacidad</h1>
+        <p class="lead">Nuestra política de privacidad explica cómo manejamos y protegemos tu información personal.</p>
+    </section>
+
+    <section class="mb-5">
+        <h2>Recolección de Información</h2>
+        <p>Recopilamos información personal que tú nos proporcionas directamente, como cuando te registras en nuestros cursos, te suscribes a nuestro boletín informativo, o te pones en contacto con nosotros para obtener información adicional.</p>
+    </section>
+
+    <section class="mb-5">
+        <h2>Uso de la Información</h2>
+        <p>Utilizamos tu información personal para proporcionarte los servicios que solicitas, mejorar nuestra oferta de cursos y servicios, y comunicarnos contigo. Nunca vendemos ni compartimos tu información personal con terceros sin tu consentimiento.</p>
+    </section>
+
+    <section class="mb-5">
+        <h2>Protección de la Información</h2>
+        <p>Implementamos una variedad de medidas de seguridad para mantener la seguridad de tu información personal. Tus datos personales están contenidos detrás de redes seguras y solo son accesibles por un número limitado de personas que tienen derechos especiales de acceso a dichos sistemas.</p>
+    </section>
+
+    <section class="mb-5">
+        <h2>Tus Derechos</h2>
+        <p>Tienes derecho a acceder, corregir y eliminar tu información personal en cualquier momento. Si deseas ejercer estos derechos, por favor contáctanos a través de la información de contacto proporcionada en nuestra página.</p>
+    </section>
+
+    <section class="mb-5">
+        <h2>Cambios en la Política de Privacidad</h2>
+        <p>Nos reservamos el derecho de actualizar o modificar esta política de privacidad en cualquier momento. Cualquier cambio será publicado en esta página y te notificaremos a través de correo electrónico si se realizan cambios significativos.</p>
+    </section>
+
+    <section class="mb-5">
+        <h2>Contacto</h2>
+        <p>Si tienes alguna pregunta sobre nuestras políticas de privacidad, por favor contáctanos:</p>
+        <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad, País</p>
+        <p><strong>Teléfono:</strong> +123 456 7890</p>
+        <p><strong>Email:</strong> contacto@iglesia.com</p>
+    </section>
+</main>
+<footer th:insert="~{fragments/footer::footer}"></footer>
+</body>
+</html>

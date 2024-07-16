@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<header th:insert="~{fragments/headers/proceso-header::proceso-header}"></header>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Formulario de Inscripción</h2>
+    <div class="alert alert-danger" role="alert" id="alerta">
+        Todos los campos son obligatorios.
+    </div>
+    <form id="formInscripcion">
+        <div class="form-group">
+            <label for="tipoDocumento">Tipo de Documento</label>
+            <select class="form-control" id="tipoDocumento" required>
+                <option value="">Seleccione...</option>
+                <option value="TI">Tarjeta de identidad</option>
+                <option value="Cédula">Cédula</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="numeroIdentificacion">Número de Identificación</label>
+            <input type="text" class="form-control" id="numeroIdentificacion" required>
+        </div>
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" class="form-control" id="apellido" required>
+        </div>
+        <div class="form-group">
+            <label for="numeroCelular">Número Celular</label>
+            <input type="tel" class="form-control" id="numeroCelular" required>
+        </div>
+        <div class="form-group">
+            <label for="modalidadEstudio">Modalidad de Estudio</label>
+            <select class="form-control" id="modalidadEstudio" required>
+                <option value="">Seleccione...</option>
+                <option value="Presencial">Presencial</option>
+                <option value="Virtual">Virtual</option>
+                <option value="A distancia">A distancia</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="correoElectronico">Correo Electrónico</label>
+            <input type="email" class="form-control" id="correoElectronico" required>
+        </div>
+        <div class="form-group" style="display: flex">
+            <label for="condiciones">Acepto los términos y condiciones de uso de datos personales</label>
+            <input type="checkbox" class="form-control" id="condiciones" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+    </form>
+</div>
+
+<footer th:insert="~{fragments/footer::footer}"></footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.getElementById('formInscripcion').addEventListener('submit', function (event) {
+        event.preventDefault();
+        let form = event.target;
+        let valid = true;
+
+        form.querySelectorAll('input, select').forEach(function (input) {
+            if (!input.value) {
+                valid = false;
+            }
+        });
+
+        if (valid) {
+            // Aquí puedes agregar la lógica para enviar el formulario
+            alert('Formulario enviado correctamente');
+        } else {
+            document.getElementById('alerta').style.display = 'block';
+        }
+    });
+</script>
+</body>
+</html>
