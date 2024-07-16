@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales del Curso</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .material-item {
+            border: 1px solid #1f1f1f;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 15px;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<header th:insert="~{fragments/headers/proceso-header::proceso-header}"></header>
+
+<div class="container course-materials-container">
+    <h2 class="text-center mb-4" th:text="${course.name}" alt="">Nombre del curso</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div th:each="material : ${course.materials}" class="material-item">
+                <h4 th:text="${material.title}" alt="Título del Material">Titulo</h4>
+                <p th:text="${material.description}" alt="Descripción del material">Descripcion</p>
+                <a th:href="@{${material.url}}" class="btn btn-primary" target="_blank">Descargar</a>
+                <a th:formaction="@{${material.url}}" class="btn btn-primary" target="_blank">Ver</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:insert="~{fragments/footer::footer}"></footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
