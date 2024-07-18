@@ -28,6 +28,7 @@
     }
     .table th, .table td {
       vertical-align: middle;
+      text-align: center;
     }
     .section {
       padding-top: 50px;
@@ -53,12 +54,14 @@
       <li class="nav-item">
         <a class="nav-link" href="contenidos.html">Contenidos</a>
       </li>
-
       <li class="nav-item">
         <a class="nav-link" href="#">Notificaciones</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="talleres.html">Talleres</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.html">Cerrar Sesión</a>
       </li>
     </ul>
   </div>
@@ -67,9 +70,9 @@
 <div class="container">
   <div id="asistencias" class="section">
     <h2>Control de Asistencias</h2>
-    <p>Marcar la asistencia de los estudiantes a las clases.</p>
+    <p>Marca la asistencia de los estudiantes a las clases:</p>
     <form id="attendanceForm">
-      <table class="table">
+      <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
             <th>Estudiante</th>
@@ -95,7 +98,7 @@
               <input type="checkbox" name="attendance[]" value="Carlos López">
             </td>
           </tr>
-          <!-- Más filas -->
+          <!-- Más filas de estudiantes -->
         </tbody>
       </table>
       <button type="submit" class="btn btn-primary">Guardar Asistencias</button>
@@ -111,10 +114,11 @@
     $('#attendanceForm').on('submit', function(e) {
       e.preventDefault();
       let formData = $(this).serializeArray();
-      console.log(formData);
+      console.log(formData); // Puedes eliminar esta línea en producción
       alert('Asistencias guardadas exitosamente.');
     });
   });
 </script>
 </body>
 </html>
+

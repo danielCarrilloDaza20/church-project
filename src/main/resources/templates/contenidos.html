@@ -10,25 +10,39 @@
       background-color: #f8f9fa;
     }
     .container {
-      background-color: white;
+      background-color: #fff;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       margin-top: 20px;
     }
     .navbar {
+      background-color: #343a40; /* Color del navbar */
       margin-bottom: 20px;
     }
-    .card {
-      margin-bottom: 20px;
+    .navbar-brand, .navbar-nav .nav-link {
+      color: #fff; /* Color del texto en el navbar */
     }
-    .btn-primary {
-      background-color: #007bff;
-      border-color: #007bff;
+    .navbar-brand:hover, .navbar-nav .nav-link:hover {
+      color: #f8f9fa; /* Color del texto en hover */
     }
     .section {
-      padding-top: 50px;
-      margin-top: -50px;
+      background-color: #ffffff; /* Color de fondo de las secciones */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+    .form-group label {
+      font-weight: bold; /* Texto del label en negrita */
+    }
+    .btn-primary {
+      background-color: #007bff; /* Color del botón principal */
+      border-color: #007bff;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3; /* Color del botón principal en hover */
+      border-color: #0056b3;
     }
   </style>
 </head>
@@ -56,14 +70,17 @@
       <li class="nav-item">
         <a class="nav-link" href="talleres.html">Talleres</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.html">Cerrar Sesión</a>
+      </li>
     </ul>
   </div>
 </nav>
 
 <div class="container">
   <div id="contenidos" class="section">
-    <h2>Gestión de Contenidos</h2>
-    <p>Subir y gestionar materiales de estudio en formato PDF.</p>
+    <h2 class="mb-4">Gestión de Contenidos</h2>
+    <p class="mb-4">Subir y gestionar materiales de estudio en formato PDF.</p>
     <form enctype="multipart/form-data" id="contentForm">
       <div class="form-group">
         <label for="nivel">Seleccionar Nivel</label>
@@ -106,3 +123,4 @@
 </script>
 </body>
 </html>
+
