@@ -4,31 +4,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
-@RequestMapping("/teachers")
+@Controller()
+@RequestMapping("teachers")
 public class TeachersController {
 
-    @GetMapping("")
-    public String teachers() {
-
-        return "teachers";
-    }
-
-    @GetMapping("asistencias")
-    public String asistencias() {
-
+    @GetMapping("/assistances")
+    public String showTeachers(){
         return "asistencias";
     }
 
-    @GetMapping("contenidos")
-    public String contenidos() {
-
+    @GetMapping("/content")
+    public String showContent(){
         return "contenidos";
     }
 
-    @GetMapping("talleres")
-    public String talleres() {
-
+    @GetMapping("/talleres")
+    public String showTalleres(){
         return "talleres";
     }
 }
