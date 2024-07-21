@@ -17,61 +17,24 @@
     </style>
 </head>
 <body>
-<header th:insert="~{fragments/headers/teachers-header::teachers-header}"></header>
+<header th:insert="~{fragments/headers/students-header::students-header}"></header>
 <h2>Estudiantes</h2>
 <hr>
+<div class="jumbotron">
+  <h1 class="display-4">¡Bienvenido al Sistema Educativo!</h1>
+  <p class="lead">Gestione sus estudios de manera fácil y eficiente.</p>
+</div>
 
-<!-- Main Content -->
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-4">
-            <!-- Datos Personales -->
-            <div class="card">
-                <div class="card-header">
-                    Datos Personales
-                </div>
-                <div class="card-body">
-                    <p><strong>Nombre:</strong> Juan Pérez</p>
-                    <p><strong>Email:</strong> juan.perez@example.com</p>
-                    <p><strong>Teléfono:</strong> 3137863432</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <!-- Materiales de Estudio -->
-            <div class="card">
-                <div class="card-header">
-                    Materiales de Estudio
-                </div>
-                <div class="card-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="#">Lección 1 - Introducción</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">Taller 1 - Conceptos Básicos</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">Lección 2 - Avanzado</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <!-- Información del Proceso de Formación -->
-            <div class="card">
-                <div class="card-header">
-                    Proceso de Formación
-                </div>
-                <div class="card-body">
-                    <p><strong>Asistencias a Clases:</strong> 90%</p>
-                    <p><strong>Mensajes:</strong> 5 Nuevos Mensajes</p>
-                    <p><strong>Notificaciones:</strong> 2 Notificaciones Nuevas</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container">
+  <h2 class="text-center">Nivel 1</h2>
+  <p class="text-center">12 Clases (Lecciones)</p>
+  <div class="list-group">
+    <button type="button" class="list-group-item list-group-item-action">Lección 1</button>
+    <button type="button" class="list-group-item list-group-item-action">Lección 2</button>
+    <button type="button" class="list-group-item list-group-item-action">Lección 3</button>
+    <button type="button" class="list-group-item list-group-item-action">Lección 4</button>
+    <button type="button" class="list-group-item list-group-item-action">Lección 5</button>
+  </div>
 </div>
 
 <footer th:insert="~{fragments/footer::footer}"></footer>

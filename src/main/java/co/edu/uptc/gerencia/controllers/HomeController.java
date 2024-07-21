@@ -18,11 +18,11 @@ public class HomeController {
     }
 
     // request mapping para /teachers
-/*    @GetMapping({"/teachers"})
+    @GetMapping({"/teachers"})
     public String showTeachers(){
         return "teachers";
     }
-*/
+
     // request mapping para /students
     @GetMapping({"/students"})
     public String showStudents(){

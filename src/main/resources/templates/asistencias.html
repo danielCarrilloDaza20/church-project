@@ -43,7 +43,7 @@
     <h2>Control de Asistencias</h2>
     <p>Marcar la asistencia de los estudiantes a las clases.</p>
     <form id="attendanceForm">
-      <table class="table">
+      <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
             <th>Estudiante</th>
@@ -85,7 +85,7 @@
     $('#attendanceForm').on('submit', function(e) {
       e.preventDefault();
       let formData = $(this).serializeArray();
-      console.log(formData);
+      console.log(formData); // Puedes eliminar esta línea en producción
       alert('Asistencias guardadas exitosamente.');
     });
   });

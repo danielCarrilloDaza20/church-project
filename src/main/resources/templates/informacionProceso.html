@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Información de Proceso</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      margin-bottom: 20px;
+    }
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .jumbotron {
+      background:#008080;
+      color: white;
+      text-align: center;
+    }
+    .icon {
+      font-size: 50px;
+      color: #ffc107;
+    }
+    .table th, .table td {
+      vertical-align: middle;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header th:insert="~{fragments/headers/students-header::students-header}"></header>
+
+<div class="jumbotron">
+  <h1 class="display-4">Información de Proceso</h1>
+  <p class="lead">Consulte su información relacionada a su rol en el Proceso de Formación.</p>
+</div>
+
+<div class="container">
+  <div class="header">
+    <i class="icon fas fa-info-circle"></i>
+  </div>
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Nivel</th>
+        <th>Clase</th>
+        <th>Fecha de Clase</th>
+        <th>Hora de Clase</th>
+        <th>Profesor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Nivel 1</td>
+        <td>Clase 1</td>
+        <td>15/08/2024</td>
+        <td>10:00 AM</td>
+        <td>Andres Perez</td>
+      </tr>
+      <tr>
+        <td>Nivel 1</td>
+        <td>Clase 2</td>
+        <td>17/08/2024</td>
+        <td>09:30 AM</td>
+        <td>Carlos Gonzalez</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
