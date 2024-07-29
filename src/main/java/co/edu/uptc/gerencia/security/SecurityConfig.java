@@ -43,7 +43,7 @@ public class SecurityConfig {
                                 .requestMatchers("/landing").permitAll()
                                 .requestMatchers(("/")).hasRole("USER")
                                 .requestMatchers("/students/**").hasRole("TEACHER")
-                                .requestMatchers("/teachers/**", "/students/**").hasRole("ADMINISTRATOR")
+                                .requestMatchers("/admin/teachers/**", "/admin/students/**").hasRole("ADMINISTRATOR")
                                 .requestMatchers("/register/**").permitAll()
                                 .anyRequest().authenticated()
                 )
