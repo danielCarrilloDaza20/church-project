@@ -21,13 +21,4 @@ public class Course {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "start_date")
-    private Date startDate;
-
-    @Column(name = "end_date")
-    private Date endDate;
-
-    @Column(name = "mode")
-    private String mode;
-
 }

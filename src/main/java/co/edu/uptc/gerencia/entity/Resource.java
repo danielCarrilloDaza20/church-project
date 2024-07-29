@@ -19,8 +19,8 @@ public class Resource {
     private Course course;
 
     @Column(nullable = false)
-    private String type;
+    private String title;
 
     @Column(nullable = false)
-    private String link;
+    private String url;
 }
