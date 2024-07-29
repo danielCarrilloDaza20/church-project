@@ -27,14 +27,8 @@
 
 <div class="container">
   <h2 class="text-center" th:text="'Estudiantes Inscritos al ' + ${course.name}"></h2>
-  <div class="list-group">
-    <button type="button" class="list-group-item list-group-item-action">Lección 1</button>
-    <button type="button" class="list-group-item list-group-item-action">Lección 2</button>
-    <button type="button" class="list-group-item list-group-item-action">Lección 3</button>
-    <button type="button" class="list-group-item list-group-item-action">Lección 4</button>
-    <button type="button" class="list-group-item list-group-item-action">Lección 5</button>
-  </div>
-<table class="table table-striped">
+
+<table class="table table-striped" th:if="${!students.isEmpty()}">
     <thead>
     <tr>
         <th>ID</th>
