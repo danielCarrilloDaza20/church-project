@@ -42,13 +42,36 @@ public class HomeController {
         return "teachers";
     }
 
+    @GetMapping("/students")
+    public String showAllStudents(Model model){
+        List<Student> students = studentRepository.findAll();
+        model.addAttribute("students", students);
+        return "allStudents";
+    }
+
     // request mapping para /students
     @GetMapping({"/students/{courseId}"})
-    public String showStudents(@PathVariable("courseId") Long courseId, Model model){
+    public String showStudentsByCourseId(@PathVariable("courseId") Long courseId, Model model){
         Course course = courseRepository.findById(courseId).get();
         List<Student> students = studentRepository.findByCourse(courseId);
         model.addAttribute("course", course);
         model.addAttribute("students", students);
         return "students";
+    }
+
+    @GetMapping("/lessons/{courseId}")
+    public String showLessonsByCourseId(@PathVariable("courseId") Long courseId, Model model){
+        Course course = courseRepository.findById(courseId).get();
+        List<Course> courses = courseRepository.findAll();
+        int cantLessons = 0;
+        if (course.getId() == 1){
+            cantLessons = 12;
+        }else if (course.getId() == 2 || course.getId() == 3){
+            cantLessons = 8;
+        }
+        model.addAttribute("courses", courses);
+        model.addAttribute("course", course);
+        model.addAttribute(cantLessons);
+        return "lessons";
     }
 }

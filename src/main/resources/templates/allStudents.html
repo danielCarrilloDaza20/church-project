@@ -26,14 +26,6 @@
 </div>
 
 <div class="container">
-  <h2 class="text-center" th:text="'Estudiantes Inscritos al ' + ${course.name}"></h2>
-  <div class="list-group">
-    <button type="button" class="list-group-item list-group-item-action">Lección 1</button>
-    <button type="button" class="list-group-item list-group-item-action">Lección 2</button>
-    <button type="button" class="list-group-item list-group-item-action">Lección 3</button>
-    <button type="button" class="list-group-item list-group-item-action">Lección 4</button>
-    <button type="button" class="list-group-item list-group-item-action">Lección 5</button>
-  </div>
 <table class="table table-striped">
     <thead>
     <tr>
@@ -51,8 +43,8 @@
         <td th:text="${student.user.userName}">johndoe</td>
         <td th:text="${student.user.firstName}">John</td>
         <td th:text="${student.user.lastName}">Doe</td>
-        <td th:text="${student.user.cellphone}">Doe</td>
         <td th:text="${student.user.email}">john@example.com</td>
+
         <td>
             <a th:href="@{/students/edit/{id}(id=${student.id})}" class="btn btn-primary">Edit</a>
             <a th:href="@{/students/delete/{id}(id=${student.id})}" class="btn btn-danger">Delete</a>
