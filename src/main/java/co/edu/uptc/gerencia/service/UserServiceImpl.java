@@ -40,6 +40,7 @@ public class UserServiceImpl implements UserService {
         return userDao.findByDocumentNumber(documentNumber);
     }
 
+
     @Override
     public void save(WebUser webUser){
         User user = new User();
