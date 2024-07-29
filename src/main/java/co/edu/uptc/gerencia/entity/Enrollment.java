@@ -15,13 +15,11 @@ public class Enrollment {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "student_id", nullable = false)
+    private Student student;
 
     @ManyToOne
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
 
-    @Column(name = "enrollment_date", nullable = false)
-    private Date enrollmentDate;
 }
