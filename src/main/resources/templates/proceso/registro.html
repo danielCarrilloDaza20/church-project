@@ -6,7 +6,46 @@
     <title>Formulario de Inscripción</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
+    <style>
+        body {
+            background: url('/images/juventud_a_tope.jpg') no-repeat center center fixed;
+            background-size: cover;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* Para compatibilidad con Safari */
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            max-width: 600px; /* Establece el ancho máximo */
+            margin: auto; /* Centra el contenedor */
+        }
+        h2 {
+            color: #004080;
+            font-weight: bold;
+        }
+        .form-group label {
+            color: #004080;
+        }
+        .form-control {
+            border: 1px solid #004080;
+        }
+        .form-control:focus {
+            border-color: #004080;
+            box-shadow: 0 0 5px rgba(0, 64, 128, 0.5);
+        }
+        .btn-primary {
+            background-color: #004080;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #002d5f;
+        }
+        .alert-danger {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <header th:insert="~{fragments/headers/proceso-header::proceso-header}"></header>
@@ -79,7 +118,6 @@
         });
 
         if (valid) {
-            // Aquí puedes agregar la lógica para enviar el formulario
             alert('Formulario enviado correctamente');
         } else {
             document.getElementById('alerta').style.display = 'block';
