@@ -10,22 +10,18 @@
         body {
             background-color: #f8f9fa;
         }
-
         .card-header {
             background-color: #007bff;
             color: white;
         }
-
         .jumbotron {
             background-color: #e9ecef;
             padding: 2rem 1rem;
             border-radius: 0.3rem;
         }
-
         .btn-back {
             margin-top: 1rem;
         }
-
         .table-actions {
             display: flex;
             gap: 0.5rem;
@@ -43,7 +39,6 @@
     </div>
 
     <div class="text-center mb-4">
-        <h2 th:text="'Estudiantes Inscritos al ' + ${course.name}"></h2>
         <a th:href="@{/}" class="btn btn-secondary btn-back">Volver</a>
     </div>
 

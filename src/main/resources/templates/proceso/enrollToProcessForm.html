@@ -10,25 +10,17 @@
         body {
             background-color: #f8f9fa;
         }
-
         .card-header {
             background-color: #007bff;
             color: white;
         }
-
         .jumbotron {
             background-color: #e9ecef;
             padding: 2rem 1rem;
             border-radius: 0.3rem;
         }
-
         .btn-back {
             margin-top: 1rem;
-        }
-
-        .table-actions {
-            display: flex;
-            gap: 0.5rem;
         }
     </style>
 </head>
@@ -43,40 +35,17 @@
     </div>
 
     <div class="text-center mb-4">
-        <h2 th:text="'Estudiantes Inscritos al ' + ${course.name}"></h2>
         <a th:href="@{/}" class="btn btn-secondary btn-back">Volver</a>
     </div>
 
-    <div th:if="${students.isEmpty()}">
-        <p class="text-center">No hay estudiantes registrados en este nivel</p>
-    </div>
-
-    <div th:if="${!students.isEmpty()}">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Username</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="student : ${students}">
-                <td th:text="${student.id}"></td>
-                <td th:text="${student.user.userName}"></td>
-                <td th:text="${student.user.firstName}"></td>
-                <td th:text="${student.user.lastName}"></td>
-                <td th:text="${student.user.email}"></td>
-                <td class="table-actions">
-                    <!--<a th:href="@{/students/edit/{id}(id=${student.id})}" class="btn btn-primary">Edit</a>-->
-                    <a th:href="@{/students/delete/{id}(id=${student.id})}" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="container">
+        <form th:action="@{/proceso/enrollToProcess}" method="post" class="form-inline justify-content-center">
+            <label for="course" class="mr-2">Seleccionar Nivel:</label>
+            <select name="courseId" id="course" class="custom-select mr-2">
+                <option th:each="course : ${courses}" th:value="${course.id}" th:text="${course.name}"></option>
+            </select>
+            <button type="submit" class="btn btn-primary">Inscribirme</button>
+        </form>
     </div>
 </div>
 

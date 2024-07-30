@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Gastos</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+        }
+        .jumbotron {
+            background-color: white;
+            border: 1px solid #dee2e6;
+            border-radius: .3rem;
+        }
+        .btn-back {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+<header th:insert="~{fragments/headers/home-header::home-header}"></header>
+
+<div class="container mt-4">
+    <h2 class="mb-3">Estudiantes</h2>
+    <hr>
+    <a th:href="@{/}" class="btn btn-secondary btn-back">Volver</a>
+    <div class="jumbotron">
+        <h1 class="display-4">¡Bienvenido al Sistema Educativo!</h1>
+        <p class="lead">Gestione sus estudios de manera fácil y eficiente.</p>
+    </div>
+
+    <div class="list-group" th:switch="${course.id}">
+        <div th:case="1">
+            <button type="button" class="list-group-item list-group-item-action">Lección 1 - Sanidad de Ataduras Espirituales</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 2 - Sanidad de Hábitos Pecaminosos</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 3 - Sanidad de las emociones Parte 1</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 4 - Sanidad de las emociones Parte 2</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 5 - Sanidad de la Mente</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 6 - Sanidad sexual Parte 1</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 7 - Sanidad sexual Parte 2</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 8 - Sanidad financiera</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 9 - Sanidad de las maldiciones</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 10 - Sanidad Física</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 11 - Sanidad de las relaciones</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 12 - Identidad y Propósito</button>
+        </div>
+
+        <div th:case="2">
+            <button type="button" class="list-group-item list-group-item-action">Lección 1 - Dios y el Hombre</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 2 - Jesucristo, provisión de Dios para el pecado del hombre</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 3 - Apropiandonos del beneficio de la cruz</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 4 - Los enemigos del creyente, La carne y el Mundo</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 5 - Los enemigos del creyente, el diablo</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 6 - El lugar secreto</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 7 - La oración</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 8 - Alabanza y Adoración</button>
+        </div>
+
+        <div th:case="3">
+            <button type="button" class="list-group-item list-group-item-action">Lección 1 - Atraer a las persona</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 2 - Visión de la iglesia</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 3 - Plantar a las personas en la iglesia</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 4 - Estanque o Fuente de Vida</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 5 - Equipar para servir</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 6 - El corazón de Jesús</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 7 - Los grupos de conexión</button>
+            <button type="button" class="list-group-item list-group-item-action">Lección 8 - Formar a las personas</button>
+        </div>
+    </div>
+</div>
+
+<footer th:insert="~{fragments/footer::footer}"></footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
