@@ -11,12 +11,13 @@
 <body>
 <header th:insert="~{fragments/headers/home-header::home-header}"></header>
 <main class="container">
-    <section class="hero">
+    <section class="hero" sec:authorize="hasAnyRole('USER')">
         <div class="container">
-            <h1>Bienvenidos a Nuestra Iglesia</h1>
-            <img th:src="@{/images/juventud_a_tope.jpg}" alt="Nosotros" class="img-fuid">
-            <p>Explora nuestros cursos y eventos</p>
-            <a href="#" class="btn btn-primary">Explorar Cursos</a>
+            <h1>Proceso de formación</h1>
+            <img th:src="@{/images/juventud_a_tope.jpg}" alt="Nosotros" class="img-fuid" loading="lazy">
+            <br>
+            <p>En nuestro proceso de formación vas a poder crecer en tu conocimiento de Dios, a fin de que tu propósito de vida sea afirmado.</p>
+            <a th:href="@{/proceso/enrollmentForm}" class="btn btn-primary">Inscribirse</a>
         </div>
     </section>
     <p>

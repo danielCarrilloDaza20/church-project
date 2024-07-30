@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Gastos</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<header th:insert="~{fragments/headers/students-header::students-header}"></header>
+<h2>Estudiantes</h2>
+<hr>
+<div class="jumbotron">
+  <h1 class="display-4">¡Bienvenido al Sistema Educativo!</h1>
+  <p class="lead">Gestione sus estudios de manera fácil y eficiente.</p>
+</div>
+
+<div class="container">
+    <form th:action="@{/proceso/enrollToProcess}" method="post">
+        <label for="course">Select Course:</label>
+        <select name="courseId" id="course">
+            <option th:each="course : ${courses}" th:value="${course.id}" th:text="${course.name}"></option>
+        </select>
+        <button type="submit">Enroll</button>
+    </form>
+</div>
+
+
+
+
+<footer th:insert="~{fragments/footer::footer}"></footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

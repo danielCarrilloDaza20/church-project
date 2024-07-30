@@ -15,4 +15,6 @@ public interface EnrollmentRepository extends JpaRepository<Enrollment, Long> {
     @Transactional
     @Query("DELETE FROM Enrollment e WHERE e.student.id = :studentId")
     void deleteEnrollmentByStudentId(@Param("studentId") Long studentId);
+
+
 }
