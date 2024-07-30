@@ -10,6 +10,7 @@
         body {
             background-color: #f8f9fa;
         }
+
         .card-header {
             background-color: #007bff;
             color: white;
@@ -21,42 +22,40 @@
 <h2>Estudiantes</h2>
 <hr>
 <div class="jumbotron">
-  <h1 class="display-4">¡Bienvenido al Sistema Educativo!</h1>
-  <p class="lead">Gestione sus estudios de manera fácil y eficiente.</p>
+    <h1 class="display-4">¡Bienvenido al Sistema Educativo!</h1>
+    <p class="lead">Gestione sus estudios de manera fácil y eficiente.</p>
 </div>
 
 <div class="container">
-  <h2 class="text-center" th:text="'Estudiantes Inscritos al ' + ${course.name}"></h2>
-
-<table class="table table-striped" th:if="${!students.isEmpty()}">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Username</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="student : ${students}">
-        <td th:text="${student.id}">1</td>
-        <td th:text="${student.user.userName}">johndoe</td>
-        <td th:text="${student.user.firstName}">John</td>
-        <td th:text="${student.user.lastName}">Doe</td>
-        <td th:text="${student.user.cellphone}">Doe</td>
-        <td th:text="${student.user.email}">john@example.com</td>
-        <td>
-            <a th:href="@{/students/edit/{id}(id=${student.id})}" class="btn btn-primary">Edit</a>
-            <a th:href="@{/students/delete/{id}(id=${student.id})}" class="btn btn-danger">Delete</a>
-        </td>
-    </tr>
-    </tbody>
-</table>
+    <h2 class="text-center" th:text="'Estudiantes Inscritos al ' + ${course.name}"></h2>
+    <p th:if="${students.isEmpty()}">No hay estudiantes registrados en este nivel</p>
+    <table class="table table-striped" th:if="${!students.isEmpty()}">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.id}">1</td>
+            <td th:text="${student.user.userName}">johndoe</td>
+            <td th:text="${student.user.firstName}">John</td>
+            <td th:text="${student.user.lastName}">Doe</td>
+            <td th:text="${student.user.cellphone}">Doe</td>
+            <td th:text="${student.user.email}">john@example.com</td>
+            <td>
+                <a th:href="@{/students/edit/{id}(id=${student.id})}" class="btn btn-primary">Edit</a>
+                <a th:href="@{/students/delete/{id}(id=${student.id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-
-
 
 
 <footer th:insert="~{fragments/footer::footer}"></footer>
