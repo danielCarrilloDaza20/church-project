@@ -14,28 +14,28 @@ import java.util.Date;
 @Data
 public class WebUser {
 
-    @NotNull(message = "is required")
-    @Size(min = 1, message = "is required")
+    @NotNull(message = "es requerido.")
+    @Size(min = 1, message = "es requerido.")
     private String userName;
 
-    @NotNull(message = "is required")
-    @Size(min = 1, message = "is required")
+    @NotNull(message = "es requerido.")
+    @Size(min = 1, message = "es requerido.")
     private String password;
 
-    @NotNull(message = "is required")
-    @Size(min = 1, message = "is required")
+    @NotNull(message = "es requerido.")
+    @Size(min = 1, message = "es requerido.")
     private String firstName;
 
-    @NotNull(message = "is required")
-    @Size(min = 1, message = "is required")
+    @NotNull(message = "es requerido.")
+    @Size(min = 1, message = "es requerido.")
     private String lastName;
 
     @NotNull(message = "es requerido")
     @Size(min = 1, message = "es requerido")
     private String cellPhone;
 
-    @NotNull(message = "is required")
-    @Size(min = 1, message = "is required")
+    @NotNull(message = "es requerido.")
+    @Size(min = 1, message = "es requerido.")
     @Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
     private String email;
 

@@ -44,8 +44,6 @@ public class ProcesoController {
     public String showClassesToStudent(Model model, Principal principal) {
         String currentUserName = principal.getName();
         User user = userRepository.findByUsername(currentUserName);
-
-
         return "proceso/classesToStudent";
     }
 
