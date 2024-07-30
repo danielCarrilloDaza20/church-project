@@ -14,29 +14,40 @@
             background-color: #007bff;
             color: white;
         }
+        .jumbotron {
+            background-color: #e9ecef;
+            padding: 2rem 1rem;
+            border-radius: 0.3rem;
+        }
+        .btn-back {
+            margin-top: 1rem;
+        }
     </style>
 </head>
 <body>
 <header th:insert="~{fragments/headers/students-header::students-header}"></header>
-<h2>Estudiantes</h2>
-<hr>
-<div class="jumbotron">
-  <h1 class="display-4">¡Bienvenido al Sistema Educativo!</h1>
-  <p class="lead">Gestione sus estudios de manera fácil y eficiente.</p>
+<div class="container my-4">
+    <h2 class="text-center">Estudiantes</h2>
+    <hr>
+    <div class="jumbotron text-center">
+        <h1 class="display-4">¡Bienvenido al Sistema Educativo!</h1>
+        <p class="lead">Gestione sus estudios de manera fácil y eficiente.</p>
+    </div>
+
+    <div class="text-center mb-4">
+        <a th:href="@{/}" class="btn btn-secondary btn-back">Volver</a>
+    </div>
+
+    <div class="container">
+        <form th:action="@{/proceso/enrollToProcess}" method="post" class="form-inline justify-content-center">
+            <label for="course" class="mr-2">Seleccionar Nivel:</label>
+            <select name="courseId" id="course" class="custom-select mr-2">
+                <option th:each="course : ${courses}" th:value="${course.id}" th:text="${course.name}"></option>
+            </select>
+            <button type="submit" class="btn btn-primary">Inscribirme</button>
+        </form>
+    </div>
 </div>
-
-<div class="container">
-    <form th:action="@{/proceso/enrollToProcess}" method="post">
-        <label for="course">Select Course:</label>
-        <select name="courseId" id="course">
-            <option th:each="course : ${courses}" th:value="${course.id}" th:text="${course.name}"></option>
-        </select>
-        <button type="submit">Enroll</button>
-    </form>
-</div>
-
-
-
 
 <footer th:insert="~{fragments/footer::footer}"></footer>
 

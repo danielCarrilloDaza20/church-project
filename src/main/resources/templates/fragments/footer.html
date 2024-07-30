@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<footer th:fragment="footer" class="bg-dark text-black py-4">
-    <div class="container bg-dark text-white">
+<footer th:fragment="footer" class="bg-dark text-white py-4">
+    <div class="container">
         <div class="row">
             <div class="col-md-6 mb-3 mb-md-0">
                 <p class="mb-0">&copy; 2024 Iglesia Fuente de Vida. Todos los derechos reservados.</p>
@@ -9,16 +10,16 @@
                 <nav>
                     <ul class="nav justify-content-md-end">
                         <li class="nav-item">
-                            <a class="nav-link text-black" th:href="@{/footer/aboutUs}">Sobre nosotros</a>
+                            <a class="nav-link text-white" th:href="@{/footer/aboutUs}">Sobre nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-black" th:href="@{/footer/contact}">Contacto</a>
+                            <a class="nav-link text-white" th:href="@{/footer/contact}">Contacto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-black" th:href="@{/footer/privacy}">Política de privacidad</a>
+                            <a class="nav-link text-white" th:href="@{/footer/privacy}">Política de privacidad</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-black" th:href="@{/footer/terms}">Términos de servicio</a>
+                            <a class="nav-link text-white" th:href="@{/footer/terms}">Términos de servicio</a>
                         </li>
                     </ul>
                 </nav>
@@ -26,5 +27,4 @@
         </div>
     </div>
 </footer>
-
 </html>
